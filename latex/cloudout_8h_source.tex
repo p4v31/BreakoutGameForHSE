@@ -1,0 +1,28 @@
+\hypertarget{cloudout_8h_source}{}\doxysection{cloudout.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <QKeyEvent>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}ufoclouds.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}sun.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}cloud.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_cloud_out}{CloudOut}} : \textcolor{keyword}{public} QWidget \{}
+\DoxyCodeLine{9   \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_cloud_out}{CloudOut}}(QWidget *parent = 0);}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_cloud_out}{\string~CloudOut}}();}
+\DoxyCodeLine{12   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} paintEvent(QPaintEvent *), drawObjects(QPainter *), scoreGame(QPainter *, QString), finishGame(QPainter *, QString), keyReleaseEvent(QKeyEvent *), keyPressEvent(QKeyEvent *), moveObjects(), timerEvent(QTimerEvent *);}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} helpGame(QPainter *, QString), startGame(), pauseGame(),stopGame(), victory(), menu(), checkCollision();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16   \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} x,timerId;}
+\DoxyCodeLine{18     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CountOfUfoClouds = 30, TimeOfGame = 5, EDGE = 400;}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_sun}{Sun}} * sun;}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_cloud}{Cloud}} * cloud;}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_ufo_cloud}{UfoCloud}} *ufoclouds[CountOfUfoClouds];}
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} gameMenu, gameOver, gameWon, gameStarted, paused;}
+\DoxyCodeLine{23 \};}
+
+\end{DoxyCode}
