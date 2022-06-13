@@ -1,17 +1,13 @@
 # CloudOut
-Игра в духе старых аркад Atari. Необходимо подлавливать шарик и направлять его в сторону блоков. Цель игры - сбить все блоки.
-
-![image](https://user-images.githubusercontent.com/90404785/173357038-754d363d-c00e-4c4a-bae3-92dcf1c7ceb4.png)
-![image](https://user-images.githubusercontent.com/90404785/173357601-9dcfb48e-7e0c-4aca-b2a8-4cffac78eb23.png)
-
+Игра в духе старых аркад Atari. Необходимо подлавливать солнце облачком и отбивать им инопланетные облака...
+![image](https://user-images.githubusercontent.com/90404785/173358639-05579173-e227-4ba0-96b3-d5e23c797aa2.png)
+![image](https://user-images.githubusercontent.com/90404785/173358714-95b9e5c0-b553-4a53-8b50-b6ce970c03db.png)
 
 # Управление
-P - Пауза
 Space - начало игры
 Esc - выход из игры
-Стрелки влево/вправо - направление движущегося блока
-
-![image](https://user-images.githubusercontent.com/90404785/173357714-0933b23c-ab3e-4270-81b8-f91bad195625.png)
+Стрелки влево/вправо - направление движущегося облачка
+![image](https://user-images.githubusercontent.com/90404785/173358382-6d525430-b51c-45a0-b41a-2639b0dc837a.png)
 
 # Ссылки на источник
 1. Загрузка QT - https://download.qt.io/official_releases/qt/5.12/
