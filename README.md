@@ -2,7 +2,6 @@
 Игра в духе старых аркад Atari. Необходимо подлавливать шарик и направлять его в сторону блоков. Цель игры - сбить все блоки.
 
 ![image](https://user-images.githubusercontent.com/90404785/173357038-754d363d-c00e-4c4a-bae3-92dcf1c7ceb4.png)
-
 ![image](https://user-images.githubusercontent.com/90404785/173357601-9dcfb48e-7e0c-4aca-b2a8-4cffac78eb23.png)
 
 
