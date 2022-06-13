@@ -1,5 +1,6 @@
 # CloudOut
 Игра в духе старых аркад Atari. Необходимо подлавливать солнце облачком и отбивать им инопланетные облака...
+
 ![image](https://user-images.githubusercontent.com/90404785/173358639-05579173-e227-4ba0-96b3-d5e23c797aa2.png)
 ![image](https://user-images.githubusercontent.com/90404785/173358714-95b9e5c0-b553-4a53-8b50-b6ce970c03db.png)
 
@@ -7,6 +8,7 @@
 Space - начало игры
 Esc - выход из игры
 Стрелки влево/вправо - направление движущегося облачка
+
 ![image](https://user-images.githubusercontent.com/90404785/173358382-6d525430-b51c-45a0-b41a-2639b0dc837a.png)
 
 # Ссылки на источник
