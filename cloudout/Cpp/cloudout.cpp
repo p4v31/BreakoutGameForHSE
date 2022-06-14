@@ -233,7 +233,7 @@ void CloudOut::checkCollision() {
     }
   }
 
-  if ((sun->getRect()).intersects(cloud->getRect())) {
+  if ((sun->getRect()).intersects(cloud->getRect())) { //заимствование
 
     int CloudLPos = cloud->getRect().left(), SunLPos = sun->getRect().left();
 
@@ -265,7 +265,7 @@ void CloudOut::checkCollision() {
     }
   }
 
-  for (int i=0; i<CountOfUfoClouds; i++) {
+  for (int i=0; i<CountOfUfoClouds; i++) { //заимствование
 
     if ((sun->getRect()).intersects(ufoclouds[i]->getRect())) {
 
