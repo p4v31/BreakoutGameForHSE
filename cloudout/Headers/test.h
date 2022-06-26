@@ -3,6 +3,11 @@
 
 #include <QObject>
 #include <QtTest/QtTest>
+#include "cloudout.h"
+#include "sun.h"
+#include "ufoclouds.h"
+#include "cloud.h"
+
 
 class Test : public QObject
 {
@@ -73,6 +78,22 @@ private slots:
     void sixthTest(){
 
         QCOMPARE(0,0);
+
+    }
+
+    void seventhTest(){
+        QCOMPARE(TimeOfGame, 5);
+    }
+
+    void eightTest(){
+        QCOMPARE(INITIAL_Y, 150);
+    }
+
+    void ninethTest(){
+        QCOMPARE(RIGHT_EDGE, 300);
+    }
+
+    void tenthtest(){
 
     }
 
