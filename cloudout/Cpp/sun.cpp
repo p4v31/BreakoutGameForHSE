@@ -1,13 +1,13 @@
 #include <iostream>
 #include "sun.h"
 
-Sun::Sun() {
+Sun::Sun() {    ///загрузка айтема
 
   xdir = 1;
   ydir = -1;
 
 
-  image.load("sun.png");
+  image.load("sun.png");   ///загрузка изображения солнца
 
 
 
@@ -17,7 +17,7 @@ Sun::Sun() {
 
 Sun::~Sun() {
 
-  std::cout << ("Sun deleted") << std::endl;
+  std::cout << ("Sun deleted") << std::endl;   /// вывод проигрыша
 
 }
 
@@ -38,7 +38,7 @@ void Sun::autoMove() {
   }
 }
 
-void Sun::restartSt() {
+void Sun::restartSt() {   ///перезапуск
 
   rect.moveTo(INITIAL_X, INITIAL_Y);
 }
@@ -68,7 +68,7 @@ QRect Sun::getRect() {
   return rect;
 }
 
-QImage & Sun::getImage() {
+QImage & Sun::getImage() {  ///изображение
 
   return image;
 }

@@ -13,7 +13,22 @@ private:
     {
         return true;
     }
-
+    bool gameWon()
+    {
+        return false;
+    }
+    bool gameOver()
+    {
+        return false;
+    }
+    bool gameStarted()
+    {
+        return false;
+    }
+    bool paused()
+    {
+        return false;
+    }
 private slots:
     void initTestCase()
     {

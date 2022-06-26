@@ -2,7 +2,7 @@
 #include <QImage>
 #include <QRect>
 
-class Cloud {
+class Cloud {  ///отвечает за облако, из которого мы стреляем солнцем
   public:
     Cloud();
     ~Cloud();
@@ -13,5 +13,5 @@ class Cloud {
     QImage image;
     QRect rect;
     int dx;
-    static const int INITIAL_X = 150, INITIAL_Y = 390;
+    static const int INITIAL_X = 150, INITIAL_Y = 390;   ///задаем позицию для старта нашего облачка
 };

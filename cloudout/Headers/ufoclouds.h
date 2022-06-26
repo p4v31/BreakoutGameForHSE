@@ -2,7 +2,7 @@
 #include <QImage>
 #include <QRect>
 
-class UfoCloud {
+class UfoCloud { ///отвечает за облака, в которые мы стреляем солнцем
   public:
     UfoCloud(int, int);
     ~UfoCloud();

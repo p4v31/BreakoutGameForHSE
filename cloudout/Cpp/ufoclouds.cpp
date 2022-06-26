@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ufoclouds.h"
 
-UfoCloud::UfoCloud(int x, int y) {
+UfoCloud::UfoCloud(int x, int y) {   ///загрузка айтема
 
   image.load("ufoclouds.png");
   crashed = false;
@@ -11,7 +11,7 @@ UfoCloud::UfoCloud(int x, int y) {
 
 UfoCloud::~UfoCloud() {
 
-  std::cout << ("UfoCloud deleted:(") << std::endl;
+  std::cout << ("UfoCloud deleted:(") << std::endl;   /// уничтожение облачка
 }
 
 QRect UfoCloud::getRect() {
@@ -24,17 +24,17 @@ void UfoCloud::setRect(QRect rct) {
   rect = rct;
 }
 
-QImage & UfoCloud::getImage() {
+QImage & UfoCloud::getImage() {   ///изображение
 
   return image;
 }
 
-bool UfoCloud::isCrashed() {
+bool UfoCloud::isCrashed() {   ///проверка на разрушение до этого
 
   return crashed;
 }
 
-void UfoCloud::setDestroyed(bool crash) {
+void UfoCloud::setDestroyed(bool crash) {   ///разрушение
 
   crashed = crash;
 }

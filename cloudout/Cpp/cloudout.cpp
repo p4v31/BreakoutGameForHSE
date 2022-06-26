@@ -2,11 +2,13 @@
 #include <QApplication>
 #include "cloudout.h"
 
+///главный файл игры
+
 CloudOut::CloudOut(QWidget *parent)
     : QWidget(parent) {
 
   x = 0;
-  sun = new Sun();
+  sun = new Sun(); ///управление состояниями игры при запуске
   cloud = new Cloud();
   gameStarted = false;
   gameMenu= true;
@@ -37,25 +39,25 @@ CloudOut::~CloudOut() {
  }
 }
 
-void CloudOut::paintEvent(QPaintEvent *e) {
+void CloudOut::paintEvent(QPaintEvent *e) {  ///управление состояниями игры
 
   Q_UNUSED(e);
 
   QPainter painter(this);
 
   if (gameMenu) {
-    helpGame(&painter, "Press Space for start");}
+    helpGame(&painter, "Press Space for start");}    ///надпись для старта игры
   else {
   if (gameOver) {
-    finishGame(&painter, "The sun is lost");}
+    finishGame(&painter, "The sun is lost");}       ///надпись для проигрыша
   else if(gameWon) {
-    finishGame(&painter, "The sun has Victory");}
+    finishGame(&painter, "The sun has Victory");}   ///надпись для выигрыша
   else {
     drawObjects(&painter);
-    scoreGame(&painter, "Score N");}
+    scoreGame(&painter, "Score N");}                ///счетчик
     }
 }
-void CloudOut::scoreGame(QPainter *painter, QString message) {
+void CloudOut::scoreGame(QPainter *painter, QString message) { ///счетчик
 
   QFont font("Courier", 15, QFont::Bold);
   QFontMetrics fm(font);
@@ -66,7 +68,7 @@ void CloudOut::scoreGame(QPainter *painter, QString message) {
   painter->drawText(-textWidth/2+90, -170, message);
 }
 
-void CloudOut::finishGame(QPainter *painter, QString message) {
+void CloudOut::finishGame(QPainter *painter, QString message) { ///экран конца игры
 
   QFont font("Courier", 15, QFont::DemiBold);
   QFontMetrics fm(font);
@@ -77,7 +79,7 @@ void CloudOut::finishGame(QPainter *painter, QString message) {
   painter->drawText(-textWidth/2, 0, message);
 }
 
-void CloudOut::helpGame(QPainter *painter, QString message) {
+void CloudOut::helpGame(QPainter *painter, QString message) { ///начальный экран
 
   QFont font("Courier", 10, QFont::DemiBold);
   QFontMetrics fm(font);
@@ -88,7 +90,7 @@ void CloudOut::helpGame(QPainter *painter, QString message) {
   painter->drawText(-textWidth/2,0, message);
 }
 
-void CloudOut::drawObjects(QPainter *painter) {
+void CloudOut::drawObjects(QPainter *painter) { ///отрисовка объектов
 
   painter->drawImage(sun->getRect(), sun->getImage());
   painter->drawImage(cloud->getRect(), cloud->getImage());
@@ -100,7 +102,7 @@ void CloudOut::drawObjects(QPainter *painter) {
   }
 }
 
-void CloudOut::timerEvent(QTimerEvent *e) {
+void CloudOut::timerEvent(QTimerEvent *e) { ///timerevent
 
   Q_UNUSED(e);
   moveObjects();
@@ -108,54 +110,54 @@ void CloudOut::timerEvent(QTimerEvent *e) {
   repaint();
 }
 
-void CloudOut::moveObjects() {
+void CloudOut::moveObjects() {    ///перемещение объектов
 
   sun->autoMove();
   cloud->move();
 }
 
-void CloudOut::keyReleaseEvent(QKeyEvent *e) {
+void CloudOut::keyReleaseEvent(QKeyEvent *e) {///обработка клавиш
 
     int dx = 0;
 
     switch (e->key()) {
-        case Qt::Key_Left:
+        case Qt::Key_Left:   ///обработка левой клавиши
             dx = 0;
             cloud->gotDx(dx);
             break;
 
-        case Qt::Key_Right:
+        case Qt::Key_Right:   ///обработка правой клавиши
             dx = 0;
             cloud->gotDx(dx);
             break;
     }
 }
 
-void CloudOut::keyPressEvent(QKeyEvent *e) {
+void CloudOut::keyPressEvent(QKeyEvent *e) { ///обработка нажатых клавиш
 
     int dx = 0;
 
     switch (e->key()) {
 
-    case Qt::Key_Left:
+    case Qt::Key_Left:   ///обработка левой клавиши
         dx = -1;
         cloud->gotDx(dx);
         break;
 
-    case Qt::Key_Right:
+    case Qt::Key_Right:   ///обработка правой клавиши
         dx = 1;
         cloud->gotDx(dx);
         break;
 
-    case Qt::Key_P:
+    case Qt::Key_P:   ///обработка клавиши для паузы P
         pauseGame();
         break;
 
-    case Qt::Key_Space:
+    case Qt::Key_Space:   ///обработка пробела для старта и рестарта игры
         startGame();
         break;
 
-    case Qt::Key_Escape:
+    case Qt::Key_Escape:   ///обработка esc для выхода из игры
         qApp->exit();
         break;
 
@@ -164,7 +166,7 @@ void CloudOut::keyPressEvent(QKeyEvent *e) {
     }
 }
 
-void CloudOut::startGame() {
+void CloudOut::startGame() { ///состояние старта игры
 
   if (!gameStarted) {
     sun->restartSt();
@@ -181,7 +183,7 @@ void CloudOut::startGame() {
   }
 }
 
-void CloudOut::pauseGame() {
+void CloudOut::pauseGame() {/// состояние паузы игры
 
   if (paused) {
     timerId = startTimer(TimeOfGame);
@@ -193,14 +195,14 @@ void CloudOut::pauseGame() {
   }
 }
 
-void CloudOut::stopGame() {
+void CloudOut::stopGame() {///игрок проиграл
   killTimer(timerId);
   gameMenu = false;
   gameOver = true;
   gameStarted = false;
 }
 
-void CloudOut::victory() {
+void CloudOut::victory() {///игрок победил
 
   killTimer(timerId);
   gameMenu = false;
@@ -208,7 +210,7 @@ void CloudOut::victory() {
   gameStarted = false;
 }
 
-void CloudOut::menu() {
+void CloudOut::menu() {/// меню(начальный экран)
 
   killTimer(timerId);
   gameMenu = false;
@@ -216,7 +218,7 @@ void CloudOut::menu() {
   gameStarted = false;
 }
 
-void CloudOut::checkCollision() {
+void CloudOut::checkCollision() {///проверка на столкновения
 
   if (sun->getRect().bottom() > EDGE) {
     stopGame();
@@ -233,7 +235,7 @@ void CloudOut::checkCollision() {
     }
   }
 
-  if ((sun->getRect()).intersects(cloud->getRect())) { //заимствование
+  if ((sun->getRect()).intersects(cloud->getRect())) { ///заимствование
 
     int CloudLPos = cloud->getRect().left(), SunLPos = sun->getRect().left();
 
@@ -265,7 +267,7 @@ void CloudOut::checkCollision() {
     }
   }
 
-  for (int i=0; i<CountOfUfoClouds; i++) { //заимствование
+  for (int i=0; i<CountOfUfoClouds; i++) { ///заимствование
 
     if ((sun->getRect()).intersects(ufoclouds[i]->getRect())) {
 
