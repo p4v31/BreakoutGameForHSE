@@ -1,0 +1,52 @@
+\hypertarget{test_8h_source}{}\doxysection{test.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TEST\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TEST\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QtTest/QtTest>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_test}{Test}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     Q\_OBJECT}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{bool} gameMenu()}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} gameWon()}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{bool} gameOver()}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} gameStarted()}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} paused()}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} initTestCase()}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         qDebug(\textcolor{stringliteral}{"{}Test is on"{}});}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} firstTest()}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         QVERIFY(\textcolor{keyword}{true});}
+\DoxyCodeLine{40         QCOMPARE(1,1);}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} cleanupTestCase()}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         qDebug(\textcolor{stringliteral}{"{}end"{}});}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TEST\_H}}
+
+\end{DoxyCode}

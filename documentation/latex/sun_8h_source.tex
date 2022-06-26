@@ -1,0 +1,23 @@
+\hypertarget{sun_8h_source}{}\doxysection{sun.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <QImage>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QRect>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_sun}{Sun}} \{ }
+\DoxyCodeLine{6   \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \mbox{\hyperlink{class_sun_aa3e508ffefb0cb76e55c2bdefdc907d1}{Sun}}();}
+\DoxyCodeLine{8     \mbox{\hyperlink{class_sun}{\string~Sun}}();}
+\DoxyCodeLine{9     \textcolor{keywordtype}{void} restartSt(), autoMove(), setXDir(\textcolor{keywordtype}{int}), setYDir(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} getXDir(), getYDir();}
+\DoxyCodeLine{11     QRect getRect();}
+\DoxyCodeLine{12     QImage \& getImage();}
+\DoxyCodeLine{13   \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} xdir, ydir;}
+\DoxyCodeLine{15     QImage image;}
+\DoxyCodeLine{16     QRect rect;}
+\DoxyCodeLine{17     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} INITIAL\_X = 150, INITIAL\_Y = 390, RIGHT\_EDGE = 300;   }
+\DoxyCodeLine{18 \};}
+
+\end{DoxyCode}
